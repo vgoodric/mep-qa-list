@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div id="importTargetQa">
+      <style>
+        #importTargetQa label {
+          display: block;
+          font-size: 16px;
+          font-weight: 700;
+          margin: 10px 0 5px;
+        }
+        #importTargetQa input[type="text"],
+        #importTargetQa textarea {
+          width: 500px;
+          border: 0.0625rem solid #d0d0d0;
+          padding: 0.625rem;
+        }
+        #importTargetQa input[type="submit"] {
+          background-color: #326ec8;
+          border: transparent;
+          color: #fff;
+          padding: 15px 30px;
+          border-radius: 5px;
+          font-size: 16px;
+          margin: 15px 0;
+          display: block;
+        }
+
+      </style>
+      <form action="http://localhost:3000/import/" method="post" target="parent">
+        <h2>Import into QA Links</h2>
+          <label>Target URL</label><input type="text" name="targetUrl" />
+          <label>Activity Name</label><input type="text" name="name"  />
+          <label>List of Experiences</label><textarea name="experiences"></textarea>
+          <label>AT Preview Token</label><input type="text" name="qaLink" />
+          <label>Audience Ids</label><input type="text" name="qaLink" />
+          <input type="submit" value="Submit for Import">
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

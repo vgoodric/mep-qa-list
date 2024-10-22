@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/offerCompilerTool/img/favicon.svg" sizes="32x32" />
+    <title>Activity QA Form</title>
+    <link rel="stylesheet" href="/offerCompilerTool/semantic/semantic.min.css" />
+    <script src="/offerCompilerTool/semantic/jquery.min.js"></script>
+    <script src="/offerCompilerTool/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" href="/offerCompilerTool/css/index.css" />
+    <link rel="stylesheet" href="/offerCompilerTool/css/qaLinks.css" />
+  </head>
+
+  <body>
+    <div class="ui main container solo">
+      <h1 class="ui header">🎯 QA Link Activity Form</h1>
+      <div class="ui form">
+        <div id="importedDataError" class="ui error message">
+          <div class="header">Uh Oh</div>
+          <div>
+            Looks like your trying to import Data from a Target activity, but no data was found. You can still just enter your data below, or go back
+            and try again.
+          </div>
+        </div>
+        <div id="importedDataDisplay">
+          <h4>Import data found. The following import data will auto fill in the form below:</h4>
+          <table class="ui celled table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr data-value="name">
+                <td class="collapsing">Activity Name</td>
+                <td class="value"></td>
+              </tr>
+              <tr data-value="pages">
+                <td class="collapsing">Pages</td>
+                <td class="value"></td>
+              </tr>
+              <tr data-value="experiences">
+                <td class="collapsing">Experiences</td>
+                <td class="value"></td>
+              </tr>
+              <tr data-value="targetUrl">
+                <td class="collapsing">Target URL</td>
+                <td class="value"></td>
+              </tr>
+              <tr data-value="targetToken">
+                <td class="collapsing">Target Preview Token</td>
+                <td class="value"></td>
+              </tr>
+              <tr data-value="targetAudience">
+                <td class="collapsing">Target Audience IDs</td>
+                <td class="value"></td>
+              </tr>
+              <tr data-value="jiraUrl">
+                <td class="collapsing">Jira URL</td>
+                <td class="value"></td>
+              </tr>
+              <tr data-value="charterUrl">
+                <td class="collapsing">Charter URL</td>
+                <td class="value"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="fields">
+          <div class="sixteen wide required field ui search" id="offerSearch">
+            <label for="offerSearchFileName">HTML offer file name (All QA data must be associated with an offer)</label>
+            <div class="ui icon input">
+              <input class="prompt fileName" type="text" placeholder="Search offers..." id="offerSearchFileName" />
+              <input class="searchDescription" type="hidden" id="offerSearchDescription" />
+              <i class="search icon"></i>
+            </div>
+            <div class="results"></div>
+          </div>
+        </div>
+        <div id="step2">
+          <div class="fields" id="action"><!-- placeholder for action radio buttons --></div>
+          <div id="qaActivity" class="fields">
+            <div class="sixteen wide field">
+              <label for="activities">Choose activity to copy or merge with</label>
+              <div class="ui selection dropdown" id="activities">
+                <input type="hidden" name="activities" />
+                <i class="dropdown icon"></i>
+                <div class="default text">Choose Activity</div>
+                <div class="menu"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="formIncomplete" class="ui error message">
+          <div class="header">Cannot proceed</div>
+          <p>Please complete all required fields.</p>
+        </div>
+
+        <div id="full-edit-form">
+          <h3>Required</h3>
+          <div class="fields">
+            <div class="sixteen wide required field">
+              <label>Activity Name</label>
+              <input type="text" name="name" placeholder="Activity Name" />
+            </div>
+          </div>
+          <div class="fields">
+            <div class="twelve wide required field">
+              <label>Page URLs</label>
+              <textarea name="pages" rows="5" placeholder="Pages"></textarea>
+            </div>
+            <div class="four wide required field">
+              <label>Experience Names</label>
+              <textarea name="experiences" rows="5" placeholder="Experiences"></textarea>
+            </div>
+          </div>
+          <h3>Informative/Helpful if applicable</h3>
+          <div class="fields">
+            <div class="six wide field">
+              <label>Jira URL</label>
+              <input type="text" name="jiraUrl" placeholder="Jira URL" />
+            </div>
+            <div class="six wide field">
+              <label>Charter URL (shared by all activities in the</label>
+              <input type="text" name="charterUrl" placeholder="Charter URL" />
+            </div>
+            <div class="four wide field">
+              <label>Audience Names</label>
+              <textarea name="audiences" rows="3" placeholder="Audiences"></textarea>
+            </div>
+          </div>
+          <h3>Target Info Once Available</h3>
+          <div class="equal width grid fields">
+            <div class="field">
+              <label>Target Edit Activity URL</label>
+              <input type="text" name="targetUrl" placeholder="Target URL" />
+            </div>
+          </div>
+          <div class="equal width grid fields">
+            <div class="field">
+              <label>Target Preview Token</label>
+              <input type="text" name="targetToken" placeholder="Target Preview Token" />
+            </div>
+            <div class="field">
+              <label>Target Audience IDs</label>
+              <input type="text" name="targetAudience" placeholder="Target Audience IDs" />
+            </div>
+          </div>
+          <div class="actions">
+            <div class="ui green right labeled icon button" onclick="qaLinks.saveActivity()">Save<i class="save outline icon"></i></div>
+            <a class="ui red basic right labeled icon button" href="/">Cancel<i class="x icon"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/offerCompilerTool/js/qaLinks.v1.js"></script>
+    <script src="/offerCompilerTool/js/index.v3.js"></script>
+    <script>
+      qaLinks.activityFormInit(
+        {
+          targetUrl: `<%= targetUrl %>`,
+          name: `<%= name %>`,
+          qaLink: `<%= qaLink %>`,
+          targetToken: `<%= targetToken %>`,
+          targetAudience: `<%= targetAudience %>`,
+          experiences: `<%= experiences %>`,
+          jiraUrl: `<%= jiraUrl %>`,
+          charterUrl: `<%= charterUrl %>`,
+          selectedActivity: `<%= selectedActivity %>`,
+          pages: `<%= pages %>`,
+        },
+        `<%= action %>`,
+      );
+    </script>
+  </body>
+</html>

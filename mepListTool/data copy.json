@@ -1,0 +1,88 @@
+        "https://www.adobe.com/kr/": {
+            "page": "/",
+            "region": "apac",
+            "geo": "kr",
+            "manifests": {
+                "https://main--homepage--adobecom.hlx.live/homepage/fragments/mep/hp-8-19-bts-promo.json": {
+                    "targetActivity": "PZN | AU | Homepage",
+                    "lastSeen": "2024-08-21",
+                    "variants": [
+                        "target-apro-twp-abdn",
+                        "target-cc-lapsed",
+                        "target-smb",
+                        "target-edu",  
+                        "target-cpro_pzn",
+                        "target-dc",
+                        "target-return",
+                        "phone"
+                    ]
+                }
+            }
+        },
+        "https://www.adobe.com/kr/creativecloud.html": {
+            "page": "/creativecloud",
+            "region": "apac",
+            "geo": "kr",
+            "manifests": {
+                "https://main--cc--adobecom.hlx.live/products/creativecloud.json": {
+                    "targetActivity": "PZN | AU | CCOV",
+                    "lastSeen": "2024-08-21",
+                    "variants": [
+                        "target-edu_pzn",
+                        "target-b2b_pzn",
+                        "target-retrn_pzn",
+                        "target-cpro_pzn",
+                        "cc-all-apps-any",
+                        "any-cc-product-no-stock",
+                        "any-cc-product-with-stock"
+                    ]
+                }
+            }
+        },
+        "https://www.adobe.com/kr/products/illustrator.html": {
+            "page": "/products/illustrator",
+            "region": "apac",
+            "geo": "kr",
+            "manifests": {
+                "https://main--cc--adobecom.hlx.live/products/illustrator.json": {
+                    "targetActivity": "PZN | AU | Illustrator",
+                    "lastSeen": "2024-08-21",
+                    "variants": [
+                        "target-edu_pzn",
+                        "target-b2b_pzn",  
+                        "target-cpro_pzn",
+                        "phone & cc-all-apps-any",
+                        "cc-all-apps-any",
+                        "illustrator-any"
+                    ]
+                },
+                "https://main--cc--adobecom.hlx.page/cc-shared/fragments/promos/2024/americas/ste-back-to-school-q3/ste-back-to-school-q3.json": {
+                    "on": "8/16/2024, 8:00:00 AM",
+                    "off": "9/3/2024, 8:00:00 AM",
+                    "lastSeen": "2024-08-21",
+                    "variants": [
+                        "all"
+                    ]
+                },
+                "https://www.adobe.com/kr/cc-shared/fragments/tests/2024/q2/ace0875/ace0875.json": {
+                    "lastSeen": "2024-08-21",
+                    "variants": [
+                        " target-var-marqueelink"
+                    ]
+                }
+            }
+        },
+        "https://www.adobe.com/kr/products/photoshop.html": {
+            "page": "/products/photoshop",
+            "region": "apac",
+            "geo": "kr",
+            "manifests": {
+                "https://main--cc--adobecom.hlx.page/products/photoshop.json": {
+                    "targetActivity": "PZN | AU | Photoshop",
+                    "lastSeen": "2024-08-21",
+                    "variants": [
+                        "target-pzn_b2b"
+                    ]
+                }                
+            }
+        },

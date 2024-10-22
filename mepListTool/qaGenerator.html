@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/offerCompilerTool/img/favicon.svg" sizes="32x32" />
+    <title>Offer Compiler</title>
+    <link rel="stylesheet" href="/offerCompilerTool/semantic/semantic.min.css" />
+    <script src="/offerCompilerTool/semantic/jquery.min.js"></script>
+    <script src="/offerCompilerTool/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" href="/offerCompilerTool/css/index.css" />
+    <link rel="stylesheet" href="/offerCompilerTool/css/qaLinks.css" />
+    <script src="/offerCompilerTool/js/qaLinks.v1.js"></script>
+    <script src="/offerCompilerTool/js/index.v3.js"></script>
+    <script>
+      function saveQAFile() {
+        qaLinks.saveQAFile();
+      }
+      function toggleIframeDarkMode() {
+        toggleDarkMode();
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="ui form" id="qaLinkGenerator">
+      <div class="sixteen wide column">
+        <div class="fields">
+          <div class="four wide field">
+            <label for="qaType">QA Link Type</label>
+            <div class="ui selection dropdown" id="qaType">
+              <input type="hidden" name="qaType" />
+              <i class="dropdown icon"></i>
+              <div class="default text">Choose QA Link Type</div>
+              <div class="menu">
+                <div class="item" data-value="tt">TOUT (tt=)</div>
+                <div class="item" data-value="target">Target</div>
+                <div class="item" data-value="none">None</div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide field" id="qaTypes">
+            <label>Target Options</label>
+            <div>
+              <div class="field" data-target="true">
+                <div class="ui checkbox">
+                  <input type="checkbox" id="matchTargetAudience" class="hidden" />
+                  <label>Must match Target audiences (no spoof)</label>
+                </div>
+              </div>
+              <div class="field" data-target="true">
+                <div class="ui checkbox">
+                  <input type="checkbox" id="otherTargetOff" class="hidden" />
+                  <label>Shut other activities off</label>
+                </div>
+              </div>
+              <div class="field" data-target="false">
+                <div class="ui checkbox">
+                  <input type="checkbox" id="disableTarget" class="hidden" />
+                  <label>Disable Target</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide field">
+            <label>Other Options</label>
+            <div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" id="highlightUpdates" class="hidden" />
+                  <label>Highlight Updates</label>
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui checkbox">
+                  <input type="checkbox" id="audience" class="hidden" />
+                  <label>Spoof Audience for TOUT</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide field">
+            <label>Custom Parameters</label>
+            <input type="text" id="custom" placeholder="Enter Custom Parameters" />
+          </div>
+        </div>
+        <div class="fields">
+          <div class="four wide field">
+            <label>Spoof user's country for TOUT/Target/AEM</label>
+            <div class="ui fluid search selection dropdown" id="country">
+              <input type="hidden" name="country" />
+              <i class="dropdown icon"></i>
+              <div class="default text">Select Country</div>
+              <div class="menu">
+                <div class="item" data-value="">No spoof</div>
+                <div class="item" data-value="US"><i class="us flag"></i>United States (US)</div>
+                <div class="item" data-value="UK"><i class="gb flag"></i>United Kingdom (UK)</div>
+                <div class="item" data-value="AU"><i class="au flag"></i>Australia (AU)</div>
+                <div class="item" data-value="NZ"><i class="nz flag"></i>New Zealand (NZ)</div>
+                <div class="item" data-value="CA"><i class="ca flag"></i>Canada (CA)</div>
+                <div class="item" data-value="FR"><i class="fr flag"></i>France (FR)</div>
+                <div class="item" data-value="DE"><i class="de flag"></i>Germany (DE)</div>
+                <div class="item" data-value="JP"><i class="jp flag"></i>Japan (JP)</div>
+                <div class="item" data-value="AT"><i class="at flag"></i>Austria (AT)</div>
+                <div class="item" data-value="BE"><i class="be flag"></i>Belgium (BE)</div>
+                <div class="item" data-value="BG"><i class="bg flag"></i>Bulgaria (BG)</div>
+                <div class="item" data-value="BR"><i class="br flag"></i>Brazil (BR)</div>
+                <div class="item" data-value="CH"><i class="ch flag"></i>Switzerland (CH)</div>
+                <div class="item" data-value="CY"><i class="cy flag"></i>Cyprus (CY)</div>
+                <div class="item" data-value="CZ"><i class="cz flag"></i>Czech Republic (CZ)</div>
+                <div class="item" data-value="DK"><i class="dk flag"></i>Denmark (DK)</div>
+                <div class="item" data-value="EE"><i class="ee flag"></i>Estonia (EE)</div>
+                <div class="item" data-value="ES"><i class="es flag"></i>Spain (ES)</div>
+                <div class="item" data-value="FI"><i class="fi flag"></i>Finland (FI)</div>
+                <div class="item" data-value="GR"><i class="gr flag"></i>Greece (GR)</div>
+                <div class="item" data-value="HU"><i class="hu flag"></i>Hungary (HU)</div>
+                <div class="item" data-value="IE"><i class="ie flag"></i>Ireland (IE)</div>
+                <div class="item" data-value="IT"><i class="it flag"></i>Italy (IT)</div>
+                <div class="item" data-value="LT"><i class="lt flag"></i>Lithuania (LT)</div>
+                <div class="item" data-value="LU"><i class="lu flag"></i>Luxembourg (LU)</div>
+                <div class="item" data-value="LV"><i class="lv flag"></i>Latvia (LV)</div>
+                <div class="item" data-value="MT"><i class="mt flag"></i>Malta (MT)</div>
+                <div class="item" data-value="MX"><i class="mx flag"></i>Mexico (MX)</div>
+                <div class="item" data-value="NL"><i class="nl flag"></i>Netherlands (NL)</div>
+                <div class="item" data-value="NO"><i class="no flag"></i>Norway (NO)</div>
+                <div class="item" data-value="PL"><i class="pl flag"></i>Poland (PL)</div>
+                <div class="item" data-value="PT"><i class="pt flag"></i>Portugal (PT)</div>
+                <div class="item" data-value="RO"><i class="ro flag"></i>Romania (RO)</div>
+                <div class="item" data-value="SE"><i class="se flag"></i>Sweden (SE)</div>
+                <div class="item" data-value="SI"><i class="si flag"></i>Slovenia (SI)</div>
+                <div class="item" data-value="SK"><i class="sk flag"></i>Slovakia (SK)</div>
+                <div class="item" data-value="ZA"><i class="za flag"></i>South Africa (ZA)</div>
+                <div class="item" data-value="HK"><i class="hk flag"></i>Hong Kong (HK)</div>
+                <div class="item" data-value="IL"><i class="il flag"></i>Isreal (IL)</div>
+                <div class="item" data-value="IN"><i class="in flag"></i>India (IN)</div>
+                <div class="item" data-value="KR"><i class="kr flag"></i>Korea (KR)</div>
+                <div class="item" data-value="TR"><i class="tr flag"></i>Turkey (TR)</div>
+                <div class="item" data-value="RU"><i class="ru flag"></i>Russia (RU)</div>
+                <div class="item" data-value="CN"><i class="cn flag"></i>China (CN)</div>
+                <div class="item" data-value="TW"><i class="tw flag"></i>Taiwan (TW)</div>
+                <div class="item" data-value="HR"><i class="hr flag"></i>Croatia (HR)</div>
+                <div class="item" data-value="RS"><i class="rs flag"></i>Serbia (RS)</div>
+                <div class="item" data-value="UA"><i class="ua flag"></i>Ukraine (UA)</div>
+                <div class="item" data-value="EG"><i class="eg flag"></i>Egypt (EG)</div>
+                <div class="item" data-value="PH"><i class="ph flag"></i>Philippines (PH)</div>
+                <div class="item" data-value="CO"><i class="co flag"></i>Columbia (CO)</div>
+                <div class="item" data-value="CL"><i class="cl flag"></i>Chile (CL)</div>
+                <div class="item" data-value="CR"><i class="cr flag"></i>Costa Rica (CR)</div>
+                <div class="item" data-value="AR"><i class="ar flag"></i>Argentina (AR)</div>
+                <div class="item" data-value="PE"><i class="pe flag"></i>Peru (PE)</div>
+                <div class="item" data-value="VE"><i class="ve flag"></i>Venezuela (VE)</div>
+                <div class="item" data-value="EC"><i class="ec flag"></i>Ecuador (EC)</div>
+                <div class="item" data-value="GT"><i class="gt flag"></i>Guatemala (GT)</div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide field">
+            <label>Spoof page's locale for TOUT</label>
+            <div class="ui fluid search selection dropdown directValue" id="locale">
+              <input type="hidden" name="locale" />
+              <i class="dropdown icon"></i>
+              <div class="default text">Select Locale</div>
+              <div class="menu">
+                <div class="item" data-value="">No spoof</div>
+                <div class="item" data-value="es_AR"><i class="ar flag"></i>Argentina (es_AR)</div>
+                <div class="item" data-value="pt_BR"><i class="br flag"></i>Brasil (pt_BR)</div>
+                <div class="item" data-value="en_CA"><i class="ca flag"></i>Canada - English (en_CA)</div>
+                <div class="item" data-value="fr_CA"><i class="ca flag"></i>Canada - Français (fr_CA)</div>
+                <div class="item" data-value="es_CL"><i class="cl flag"></i>Chile (es_CL)</div>
+                <div class="item" data-value="es_CO"><i class="co flag"></i>Colombia (es_CO)</div>
+                <div class="item" data-value="es_CR"><i class="la flag"></i>Latinoamérica (es_CR)</div>
+                <div class="item" data-value="es_MX"><i class="mx flag"></i>México (es_MX)</div>
+                <div class="item" data-value="es_PE"><i class="pe flag"></i>Perú (es_PE)</div>
+                <div class="item" data-value="en_US"><i class="us flag"></i>United States (en_US)</div>
+                <div class="item" data-value="en_ZA"><i class="za flag"></i>Africa - English (en_ZA)</div>
+                <div class="item" data-value="nl_BE"><i class="be flag"></i>België - Nederlands (nl_BE)</div>
+                <div class="item" data-value="fr_BE"><i class="be flag"></i>Belgique - Français (fr_BE)</div>
+                <div class="item" data-value="en_BE"><i class="be flag"></i>Belgium - English (en_BE)</div>
+                <div class="item" data-value="cs-CZ"><i class="cz flag"></i>Česká republika (cs-CZ)</div>
+                <div class="item" data-value="en_CIS"><i class="am flag"></i>Commonwealth of Independant States CIS - English (en_CIS)</div>
+                <div class="item" data-value="en_CY"><i class="cy flag"></i>Cyprus - English (en_CY)</div>
+                <div class="item" data-value="da_DK"><i class="dk flag"></i>Danmark (da_DK)</div>
+                <div class="item" data-value="de_DE"><i class="de flag"></i>Deutschland (de_DE)</div>
+                <div class="item" data-value="et_EE"><i class="ee flag"></i>Eesti (et_EE)</div>
+                <div class="item" data-value="es_ES"><i class="es flag"></i>España (es_ES)</div>
+                <div class="item" data-value="fr_FR"><i class="fr flag"></i>France (fr_FR)</div>
+                <div class="item" data-value="en_GR"><i class="gr flag"></i>Greece - English (en_GR)</div>
+                <div class="item" data-value="en_IE"><i class="ie flag"></i>Ireland (en_IE)</div>
+                <div class="item" data-value="en_IL"><i class="il flag"></i>Israel - English (en_IL)</div>
+                <div class="item" data-value="it_IT"><i class="it flag"></i>Italia (it_IT)</div>
+                <div class="item" data-value="lv_LV"><i class="lv flag"></i>Latvija (lv_LV)</div>
+                <div class="item" data-value="it_LT"><i class="lt flag"></i>Lietuva (it_LT)</div>
+                <div class="item" data-value="de_LU"><i class="lu flag"></i>Luxembourg - Deutsch (de_LU)</div>
+                <div class="item" data-value="en_LU"><i class="lu flag"></i>Luxembourg - English (en_LU)</div>
+                <div class="item" data-value="fr_LU"><i class="lu flag"></i>Luxembourg - Français (fr_LU)</div>
+                <div class="item" data-value="hu_HU"><i class="hu flag"></i>Magyarország (hu_HU)</div>
+                <div class="item" data-value="en_MT"><i class="mt flag"></i>Malta - English (en_MT)</div>
+                <div class="item" data-value="en_DZ"><i class="dz flag"></i>Middle East and North Africa - English (en_DZ)</div>
+                <div class="item" data-value="nl_NL"><i class="nl flag"></i>Nederland (nl_NL)</div>
+                <div class="item" data-value="no_NO"><i class="no flag"></i>Norge (no_NO)</div>
+                <div class="item" data-value="de_AT"><i class="at flag"></i>Austria Österreich (de_AT)</div>
+                <div class="item" data-value="pl_PL"><i class="pl flag"></i>Polska (pl_PL)</div>
+                <div class="item" data-value="pt_PT"><i class="pt flag"></i>Portugal (pt_PT)</div>
+                <div class="item" data-value="ro_RO"><i class="ro flag"></i>România (ro_RO)</div>
+                <div class="item" data-value="en_SA"><i class="sa flag"></i>Saudi Arabia - English (en_SA)</div>
+                <div class="item" data-value="de_CH"><i class="ch flag"></i>Schweiz (de_CH)</div>
+                <div class="item" data-value="sl_SI"><i class="si flag"></i>Slovenija (sl_SI)</div>
+                <div class="item" data-value="sk_SK"><i class="sk flag"></i>Slovensko (sk_SK)</div>
+                <div class="item" data-value="fr_CH"><i class="ch flag"></i>Suisse (fr_CH)</div>
+                <div class="item" data-value="fi_FI"><i class="fi flag"></i>Suomi (fi_FI)</div>
+                <div class="item" data-value="sv_SE"><i class="se flag"></i>Sverige (sv_SE)</div>
+                <div class="item" data-value="it_CH"><i class="ch flag"></i>Svizzera (it_CH)</div>
+                <div class="item" data-value="tr_TR"><i class="tr flag"></i>Türkiye (tr_TR)</div>
+                <div class="item" data-value="en_AE"><i class="ae flag"></i>United Arab Emirates - English (en_AE)</div>
+                <div class="item" data-value="en_gb"><i class="uk flag"></i>United Kingdom (en_gb)</div>
+                <div class="item" data-value="bg_BG"><i class="bg flag"></i>Bulgaria България (bg_BG)</div>
+                <div class="item" data-value="ru_RU"><i class="am flag"></i>Russia Россия (ru_RU)</div>
+                <div class="item" data-value="ru_CIS"><i class="am flag"></i>Commonwealth of Independant States СНГ – русский (ru_CIS)</div>
+                <div class="item" data-value="uk_UA"><i class="ua flag"></i>Ukraine Україна (uk_UA)</div>
+                <div class="item" data-value="ar_AE"><i class="ae flag"></i><span>United Arab Emirates</span> الإمارات العربية المتحدة (ar_AE)</div>
+                <div class="item" data-value="ar_EG"><i class="eg flag"></i><span>Egypt</span>الشرق الأوسط وشمال أفريقيا - اللغة العربية (ar_EG)</div>
+                <div class="item" data-value="he_IL"><i class="il flag"></i><span>Israel</span>ישראל - עברית (he_IL)</div>
+                <div class="item" data-value="ar_SA"><i class="sa flag"></i><span>Saudi Arabia</span>المملكة العربية السعودية (ar-SA)</div>
+                <div class="item" data-value="en_AU"><i class="au flag"></i>Australia (en_AU)</div>
+                <div class="item" data-value="en_HK"><i class="hk flag"></i>Hong Kong SAR of China (en_HK)</div>
+                <div class="item" data-value="en_IN"><i class="in flag"></i>India - English (en_IN)</div>
+                <div class="item" data-value="id_ID"><i class="id flag"></i>Indonesia (id_ID)</div>
+                <div class="item" data-value="en_ID"><i class="id flag"></i>Indonesia - English (en_ID)</div>
+                <div class="item" data-value="ms-MY"><i class="my flag"></i>Malaysia (ms-MY)</div>
+                <div class="item" data-value="en_MY"><i class="my flag"></i>Malaysia - English (en_MY)</div>
+                <div class="item" data-value="en_NZ"><i class="nz flag"></i>New Zealand (en_NZ)</div>
+                <div class="item" data-value="en_PH"><i class="ph flag"></i>Philippines - English (en_PH)</div>
+                <div class="item" data-value="fil_PH"><i class="ph flag"></i>Philippines Pilipinas (fil_PH)</div>
+                <div class="item" data-value="en_SG"><i class="sg flag"></i>Singapore (en_SG)</div>
+                <div class="item" data-value="en_TH"><i class="th flag"></i>Thailand - English (en_TH)</div>
+                <div class="item" data-value="en_VN"><i class="vn flag"></i>Vietnam - English (en_VN)</div>
+                <div class="item" data-value="vi_VN"><i class="vn flag"></i>Vietnam Việt Nam (vi_VN)</div>
+                <div class="item" data-value="hi_IN"><i class="in flag"></i>India भारत (hi_IN)</div>
+                <div class="item" data-value="th_TH"><i class="th flag"></i>Thailand ประเทศไทย (th_TH)</div>
+                <div class="item" data-value="zh-hans_CN"><i class="cn flag"></i>China 中国 (zh-hans_CN)</div>
+                <div class="item" data-value="zh_HK"><i class="hk flag"></i>Hong Kong 中國香港特別行政區 (zh_HK)</div>
+                <div class="item" data-value="zh_TW"><i class="tw flag"></i>Taiwan 台灣地區 (zh_TW)</div>
+                <div class="item" data-value="ja_JP"><i class="jp flag"></i>Japan 日本 (ja_JP)</div>
+                <div class="item" data-value="ko_KR"><i class="kr flag"></i>Korea 한국 (ko_KR)</div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide field">
+            <label>Spoof browser for TOUT</label>
+            <div class="ui selection dropdown directValue" id="browser">
+              <input type="hidden" name="browser" />
+              <i class="dropdown icon"></i>
+              <div class="default text">Choose Browser</div>
+              <div class="menu">
+                <div class="item" data-value="">No spoof</div>
+                <div class="item" data-value="chrome">Chrome</div>
+                <div class="item" data-value="edge">Edge</div>
+                <div class="item" data-value="firefox">Firefox</div>
+                <div class="item" data-value="opera">Opera</div>
+                <div class="item" data-value="safari">Safari</div>
+              </div>
+            </div>
+          </div>
+          <div class="four wide field">
+            <label>Spoof OS/platform for TOUT</label>
+            <div class="ui selection dropdown directValue" id="platform">
+              <input type="hidden" name="platform" />
+              <i class="dropdown icon"></i>
+              <div class="default text">Choose OS</div>
+              <div class="menu">
+                <div class="item" data-value="">No spoof</div>
+                <div class="item" data-value="android">Android</div>
+                <div class="item" data-value="iOS">iOS</div>
+                <div class="item" data-value="windowsPhone">Windows Phone</div>
+                <div class="item" data-value="mac">Mac</div>
+                <div class="item" data-value="windows">Windows</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="qaDisplay">
+          <div id="qaLinkCopyAll">
+            <button class="blue ui button" onclick="qaLinks.copyToClipboard(this)"><i class="clipboard check icon"></i>Copy All Links</button>
+            <button id="jiraUrl" class="green ui button" onclick="qaLinks.openPage('jiraUrl')">
+              <i class="external alternate icon"></i>Open Jira ticket
+            </button>
+            <button id="charterUrl" class="green ui button" onclick="qaLinks.openPage('charterUrl')">
+              <i class="external alternate icon"></i>Open Charter
+            </button>
+            <button id="targetUrl" class="violet ui button" onclick="qaLinks.openPage('targetUrl')">
+              <i class="external alternate icon"></i>Open Target Activity
+            </button>
+            <textarea></textarea>
+          </div>
+          <div id="controlLinks"><textarea></textarea></div>
+        </div>
+        <div id="qaLinkDisplay"></div>
+      </div>
+    </div>
+    <script>
+      //$('#offerSearchDescription').val(getCookie('lastOfferDescription'));
+      qaLinks.init('setupLowerCalculateQaForm');
+    </script>
+  </body>
+</html>

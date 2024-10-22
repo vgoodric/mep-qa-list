@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="/mepListTool/img/favicon.png" sizes="32x32" />
+    <title>MEP Manifest Manager</title>
+    <link rel="stylesheet" href="/mepListTool/semantic/semantic.min.css" />
+    <script src="/mepListTool/semantic/jquery.min.js"></script>
+    <script src="/mepListTool/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" href="/mepListTool/css/index.css" />
+  </head>
+
+  <body>
+    <div>
+      <div class="full height">
+        <div class="article">
+          <i class="adjust icon toc-dark-mode-icon" onclick="toggleDarkMode()"></i>
+          <div class="ui grid" id="header">
+            <div>
+              <img src="/mepListTool/img/favicon.png" />
+            </div>
+            <div>
+              <h1 class="ui header">MEP Manifest Manager</h1>
+              <h3>So many manifests, so little time.</h3>
+            </div>
+          </div>
+          <h3>Choose a filter method</h3>
+          <div class="ui form filter-type active" data-filter-type="dropdown">
+            <div class="sixteen wide column">
+              <div class="fields">
+                <div class="six wide field" id="page-dropdown">
+                  <label>Page</label>
+                  <div class="ui fluid search selection dropdown" id="country">
+                    <input type="hidden" name="country" />
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Page</div>
+                    <div class="menu">
+                      <div class="item" data-value="">All pages</div>
+                      <div class="item" data-value="/">Homepage</div>
+                      <div class="item" data-value="/creativecloud">CCOV</div>
+                      <div class="item" data-value="/products/photoshop">Photoshop product page</div>
+                      <div class="item" data-value="/products/illustrator">Illustrator product page</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="six wide field" id="geo-dropdown">
+                  <label>Region/geo</label>
+                  <div class="ui fluid search selection dropdown directValue">
+                    <input type="hidden" name="locale" />
+                    <i class="dropdown icon"></i>
+                    <div class="default text">Select Region or Geo</div>
+                    <div class="menu">
+                      <div class="item" data-value="">All geos</div>
+                      <h5 class="ui header">Regions</h5>
+                      <div class="item" data-value="na region"><i class="us flag"></i>NA: US, CA, CA_FR</div>
+                      <div class="item" data-value="apac region"><i class="au flag"></i>APAC: AU, NZ, KR</div>
+                      <div class="item" data-value="latam region"><i class="mx flag"></i>LATAM: MX, BR</div>
+                      <div class="item" data-value="jp region"><i class="jp flag"></i>Japan 日本 (ja_JP)</div>
+                      <h5 class="ui header">Top geos</h5>
+                      <div class="item" data-value="us"><i class="us flag"></i>US: United States </div>
+                      <div class="item" data-value="ca_fr"><i class="ca flag"></i>CA-EN: Canada - English</div>
+                      <div class="item" data-value="ca"><i class="ca flag"></i>CA-FR: Canada - Français</div>
+                      <div class="item" data-value="au"><i class="au flag"></i>AU: Australia</div>
+                      <div class="item" data-value="nz"><i class="nz flag"></i>NZ: New Zealand</div>
+                      <div class="item" data-value="kr"><i class="kr flag"></i>KR: Korea 한국</div>
+                      <div class="item" data-value="mx"><i class="mx flag"></i>MX: México</div>
+                      <div class="item" data-value="pt"><i class="br flag"></i>BR: Brasil</div>
+                      <div class="item" data-value="jp"><i class="jp flag"></i>JP: Japan 日本</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="four wide field bottom">
+                  <button class="ui blue right labeled icon button" onclick="filterPagesByDropdown()">
+                    <i class="search icon"></i>
+                    Filter by page/geo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h3>Or</h3>
+          <div class="ui grid form filter-type" data-filter-type="text">
+            <div class="sixteen wide column">
+              <div class="fields">
+                <div class="twelve wide field">
+                  <label>Filter by URL</label>
+                  <div class="ui search" id="offerSearch">
+                    <div class="ui icon input">
+                      <input class="prompt fileName" type="text" placeholder="Enter full or partial URL..." id="page-filter" />
+                    </div>
+                    <div class="results"></div>
+                  </div>
+                </div>
+                <div class="four wide field bottom">
+                  <button class="ui blue right labeled icon button" onclick="filterPagesByText()">
+                    <i class="search icon"></i>
+                    Filter by URL
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui grid form" id="page-list">
+            <div class="sixteen wide column">
+              <div>
+                <h3>Page list</h3>
+                <div class="ui styled fluid accordion"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/mepListTool/js/index.js"></script>
+  </body>
+</html>

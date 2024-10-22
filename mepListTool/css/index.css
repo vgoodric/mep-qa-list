@@ -1,0 +1,226 @@
+.full.height > .toc {
+  position: fixed;
+  z-index: 1;
+  background-color: #1b1c1d;
+  width: 250px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  height: 100%;
+}
+
+.full.height > .article {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  min-width: 0px;
+  padding: 50px;
+}
+
+.article div.ui.message {
+  max-width: 800px;
+}
+
+#processor-form-buttons {
+  display: inline-block;
+}
+
+#processor-form-buttons > * {
+  margin-top: 15px;
+  display: block;
+  width: 100%;
+}
+
+.ui.search {
+  /* margin-bottom: 25px; */
+}
+
+.ui.search > .ui.icon.input {
+  width: 100%;
+}
+
+.ui.search > .results {
+  width: 50%;
+}
+
+#library-form .ui.button,
+#other-form .ui.button {
+  margin-left: 15px;
+}
+
+#other-form .ui.button:first-child {
+  margin-left: 8px;
+}
+
+#steps .eight.wide.column {
+  padding-bottom: 0;
+}
+
+#steps .sixteen.wide.column {
+  padding-top: 0;
+}
+
+.toc .button {
+  margin: 10px 0 0 10px;
+}
+
+.toc-dark-mode-icon {
+  position: absolute;
+  top: 15px;
+  cursor: pointer;
+  right: 15px;
+}
+
+.settings-button-container {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.ui.dropdown > .text {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* dark mode */
+body.dark-mode.pushable > .pusher,
+body.dark-mode .full.height > .article,
+body.dark-mode .ui.header,
+body.dark-mode .ui.checkbox label,
+body.dark-mode .ui.form .inline.fields>label,
+body.dark-mode .ui.checkbox + label,
+body.dark-mode .article .ui.accordion .title:not(.ui),
+body.dark-mode .ui.search > .results,
+body.dark-mode .ui.dropdown > .text,
+body.dark-mode .ui.selection.visible.dropdown > .text:not(.default),
+body.dark-mode .ui.accordion .content,
+body.dark-mode .ui.accordion .content label,
+body.dark-mode {
+  background-color: rgb(26, 28, 30);
+  color: rgba(232, 230, 227, 0.87);
+}
+body.dark-mode .ui.accordion .content,
+body.dark-mode .ui.accordion .content label {
+  background-color: rgb(41 44 47);
+}
+body.dark-mode .modal .content {
+  color: rgba(0, 0, 0, 0.87);
+}
+body.dark-mode .menu.transition h5,
+body.dark-mode .menu.transition {
+  background-color: #eee;
+}
+body.dark-mode .ui.selection.dropdown .menu>.item {
+  border-top: 1px solid #eee;
+}
+
+body.dark-mode .ui.search > .results .result .title,
+body.dark-mode .ui.search > .results .result .description,
+body.dark-mode .ui.search i.icon,
+body.dark-mode .ui.selection.dropdown i.icon,
+body.dark-mode .ui.form:not(.inModal) .field > label {
+  color: rgba(232, 230, 227, 0.87);
+}
+
+body.dark-mode .ui.fluid.multiple.search.selection.dropdown i.delete.icon {
+  color: #000;
+}
+
+body.dark-mode .ui.search > .results .result:hover {
+  background: rgba(46, 51, 56, 0.87);
+}
+
+body.dark-mode .ui.form:not(.inModal) input[type='text'],
+body.dark-mode .ui.form:not(.inModal) textarea,
+body.dark-mode .ui.selection.dropdown {
+  background-color: rgb(24, 26, 27);
+  border-color: #dfe1e5;
+  outline-color: initial;
+  color: rgba(232, 230, 227, 0.87);
+}
+
+body.dark-mode .ui.basic.violet.button {
+  color: #00b5ad !important;
+  box-shadow: rgb(0, 181, 173) 0px 0px 0px 1px inset !important;
+}
+
+body.dark-mode .full.height > .toc {
+  border-right: 1px solid #dfe1e5;
+}
+
+input .search.icon {
+  color: #dfe1e5;
+}
+
+body.dark-mode ::selection {
+  background-color: #1473e6;
+  color: #fff;
+}
+body.dark-mode .ui.search.dropdown.active > input.search,
+body.dark-mode .ui.search.dropdown.visible > input.search {
+  color: #fff;
+}
+
+/* collapsed toc */
+.toc-collapse-icon {
+  position: absolute;
+  top: 15px;
+  cursor: pointer;
+}
+
+.toc-collapse-icon.left {
+  right: 15px;
+  color: rgba(232, 230, 227, 0.87);
+}
+
+.toc-collapse-icon.right {
+  left: 15px;
+}
+
+body.toc-collapse .full.height > .toc {
+  display: none;
+}
+
+body:not(.toc-collapse) .toc-collapse-icon.right {
+  display: none;
+}
+
+body.toc-collapse .ui.vertical.inverted.menu {
+  display: none;
+}
+
+body.toc-collapse .full.height > .article {
+  margin-left: 0;
+}
+
+.ui.accordion .title.active:not(.ui) {
+  font-size: 1.5em;
+}
+
+.ui.accordion .hidden {
+  display: none;
+}
+
+#header {
+  margin-bottom: 20px;
+}
+#header h1 {
+  margin-bottom: 0;
+}
+#header h3  {
+  margin-top: 5px;
+}
+
+/* .filter-type:not(.active) {
+  display: none;
+} */
+
+.bottom {
+  display: flex;
+  align-items: end;
+  padding-bottom: 2px;
+}

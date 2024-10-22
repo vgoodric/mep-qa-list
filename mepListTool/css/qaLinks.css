@@ -1,0 +1,78 @@
+#qaLinkDisplay > div {
+  margin-top: 20px;
+  margin-right: 20px;
+  order: 1;
+  max-width: 100%;
+}
+#qaLinkDisplay > div[data-qa-experience-number='0'] {
+  order: 2;
+}
+#qaLinkGenerator textarea,
+#qaLinkDisplay textarea {
+  display: none;
+}
+#qaLinkGenerator .ui.compact.message,
+#qaLinkDisplay .ui.compact.message {
+  padding: 4px 10px;
+  margin: 0 0 0 10px;
+  font-size: 0.8em;
+}
+#qaLinkDisplay li:nth-child(odd) {
+  background-color: #eee;
+}
+body.dark-mode #qaLinkDisplay li:nth-child(odd) {
+  background-color: #393e43;
+}
+#qaLinkDisplay li {
+  padding: 4px 2px;
+}
+#qaLinkDisplay a {
+  overflow-wrap: break-word;
+}
+#qaLinkDisplay button {
+  padding: 7px;
+}
+#qaLinkDisplay h3 button {
+  margin-left: 10px;
+}
+#qaLinkDisplay {
+  display: flex;
+  flex-wrap: wrap;
+}
+#qaLinkDisplay ol {
+  padding-left: 20px;
+}
+.ui.form .fields > .field.autoGrow {
+  flex-grow: 1;
+}
+.main.container.solo {
+  padding: 4em 0;
+}
+#choose-activity,
+#importedDataDisplay,
+#step2 {
+  display: none;
+}
+#full-edit-form {
+  border: 1px solid lightgray;
+  border-radius: 1vw;
+  padding: 20px;
+  display: none;
+}
+#qaGenerator {
+  min-height: 200px;
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}
+#qaTypes[data-target-selected='true'] [data-target='true'],
+#qaTypes[data-target-selected='false'] [data-target='false'] {
+  display: block;
+}
+#qaTypes[data-target-selected='true'] [data-target='false'],
+#qaTypes[data-target-selected='false'] [data-target='true'] {
+  display: none;
+}
+#importedDataDisplay {
+  margin-bottom: 30px;
+}
